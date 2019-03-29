@@ -105,7 +105,7 @@ void spigotAction() {
   int spigotIsOpen = digitalRead(SPIGOT_IN_PIN);
   digitalWrite(SPIGOT_OUTPUT_PIN, spigotIsOpen);
   if (!spigotIsOpen) {
-    isOpen = false;
+    closeSpigot();
   }
 }
 
@@ -115,11 +115,11 @@ void inTimeAction(int pin, long timeIntervalClose) {
     digitalWrite(SPIGOT_OUTPUT_PIN, spigotIsOpen);
     if (!spigotIsOpen) {
       timeIntervalClose = time - timeOnClick;
-      isOpen = false;
+      closeSpigot();
     }
   } else {
     if (time - timeOnClick >= timeIntervalClose) {
-      isOpen = false;
+      closeSpigot();
     }
   }
 }
@@ -131,5 +131,5 @@ void openSpigot() {
 
 void closeSpigot() {
   isOpen = false;
-
+  digitalWrite(SPIGOT_OUTPUT_PIN, LOW);
 }
