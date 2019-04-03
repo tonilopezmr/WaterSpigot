@@ -6,9 +6,8 @@
 #define BUTTON_FOUR_PIN       13
 #define SPIGOT_IN_PIN         5
 #define WATER_SENSOR          12
-#define NEEDS_WATER_LED       9
 #define BUTTON_CONFIGURATION  10
-#define CONFIGURATION_LED     10
+#define CONFIGURATION_LED     9
 
 //Actions
 #define SPIGOT     1
@@ -42,21 +41,29 @@ void setup() {
   pinMode(BUTTON_FOUR_PIN, INPUT);
   pinMode(SPIGOT_IN_PIN, INPUT);
   pinMode(WATER_SENSOR, INPUT);
-  pinMode(NEEDS_WATER_LED, OUTPUT);
   pinMode(CONFIGURATION_LED, OUTPUT);
   pinMode(BUTTON_CONFIGURATION, INPUT);
+
+  digitalWrite(SPIGOT_OUTPUT_PIN, LOW);
 }
 
 void loop() {
-  unsigned long time = millis();
+  unsigned long currentTime = millis();
 
-  if (digitalRead(CONFIGURATION_LED)) {
+  Serial.print(" Configuration mode: ");
+  Serial.print(isConfigurationMode);
+  Serial.print(" Is open: ");
+  Serial.print(isOpen);
+  Serial.print(" Last action: ");
+  Serial.println(action);
+
+  if (digitalRead(BUTTON_CONFIGURATION)) {
     isConfigurationMode = !isConfigurationMode;
   }
 
   if (isConfigurationMode) {
-    if (time - timeLed >= INTERVAL_BLINK_IN_MILLIS) {
-      timeLed = time;
+    if (currentTime - timeLed >= INTERVAL_BLINK_IN_MILLIS) {
+      timeLed = currentTime;
       ledState = !ledState;
       digitalWrite(CONFIGURATION_LED, ledState);
     }
@@ -69,13 +76,13 @@ void loop() {
     if (action == SPIGOT) {
       spigotAction();
     } else if (action == PIN_ONE) {
-      inTimeAction(BUTTON_ONE_PIN, timePinOne);
+      inTimeAction(BUTTON_ONE_PIN, currentTime, timePinOne);
     } else if (action == PIN_TWO) {
-      inTimeAction(BUTTON_TWO_PIN, timePinTwo);
+      inTimeAction(BUTTON_TWO_PIN, currentTime, timePinTwo);
     } else if (action == PIN_THREE) {
-      inTimeAction(BUTTON_THREE_PIN, timePinThree);
+      inTimeAction(BUTTON_THREE_PIN, currentTime, timePinThree);
     } else if (action == PIN_FOUR) {
-      inTimeAction(BUTTON_FOUR_PIN_PIN, timePinFour);
+      inTimeAction(BUTTON_FOUR_PIN, currentTime, timePinFour);
     }
   } else {
     if (digitalRead(SPIGOT_IN_PIN)) {
@@ -83,19 +90,19 @@ void loop() {
       openSpigot();
     } else if (digitalRead(BUTTON_ONE_PIN)) {
       action = PIN_ONE;
-      timeOnClick = time;
+      timeOnClick = currentTime;
       openSpigot();
     } else if (digitalRead(BUTTON_TWO_PIN)) {
       action = PIN_TWO;
-      timeOnClick = time;
+      timeOnClick = currentTime;
       openSpigot();
     } else if (digitalRead(BUTTON_THREE_PIN)) {
       action = PIN_THREE;
-      timeOnClick = time;
+      timeOnClick = currentTime;
       openSpigot();
     } else if (digitalRead(BUTTON_FOUR_PIN)) {
       action = PIN_FOUR;
-      timeOnClick = time;
+      timeOnClick = currentTime;
       openSpigot();
     }
   }
@@ -109,16 +116,16 @@ void spigotAction() {
   }
 }
 
-void inTimeAction(int pin, long timeIntervalClose) {
+void inTimeAction(int pin, long currentTime, long timeIntervalClose) {
   if (isConfigurationMode) {
     int spigotIsOpen = digitalRead(pin);
     digitalWrite(SPIGOT_OUTPUT_PIN, spigotIsOpen);
     if (!spigotIsOpen) {
-      timeIntervalClose = time - timeOnClick;
+      timeIntervalClose = currentTime - timeOnClick;
       closeSpigot();
     }
   } else {
-    if (time - timeOnClick >= timeIntervalClose) {
+    if (currentTime - timeOnClick >= timeIntervalClose) {
       closeSpigot();
     }
   }
