@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "resources": ["funeral.mp4", "song.m4a", "funeral_vertical.mp4"],
+    "title": "Coffin dance",
+    "type": "complex",
+    "thumbnailUrl": "coffin.jpg"
+  },
+  {
+    "id": "2",
+    "resources": ["directedby.mp4"],
+    "title": "Directed by Robert b Weide",
+    "type": "concat",
+    "thumbnailUrl": "directedby.jpg"
+  }
+]
