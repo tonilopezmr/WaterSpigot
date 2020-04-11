@@ -1,30 +1,30 @@
-[
-  {
-    "id": "1",
-    "resources": [{
-            name: "funeral.mp4",
-            url: "http://videomemes.xyz/funeral.mp4",
-            type: "video_horizontal"
-    }, {
-        name: "song.m4a",
-        url: "http://videomemes.xyz/song.m4a"
-        type: "song"
-    }, {
-        name: "funeral_vertical.mp4",
-        url: "http://videomemes.xyz/funeral_vertical.mp4",
-        type: "video_vertical"
-    }],
-    "title": "Coffin dance",
-    "thumbnailUrl": "http://videomemes.xyz/coffin.jpg"
-  },
-  {
-    "id": "2",
-    "resources": [{
-        name: "directedby.mp4",
-        url: "http://videomemes.xyz/directedby.mp4",
-        type: "video_vertical"
-    }],
-    "title": "Directed by Robert b Weide",    
-    "thumbnailUrl": "http://videomemes.xyz/directedby.jpg"
-  }
-]
+[{
+	"id": "1",
+	"resources": [{
+			"name": "funeral.mp4",
+			"url": "http://videomemes.xyz/funeral.mp4",
+			"type": "video_horizontal"
+		},
+		{
+			"name": "song.m4a",
+			"url": "http://videomemes.xyz/song.m4a",
+			"type": "song"
+		},
+		{
+			"name": "funeral_vertical.mp4",
+			"url": "http://videomemes.xyz/funeral_vertical.mp4",
+			"type": "video_vertical"
+		}
+	],
+	"title": "Coffin dance",
+	"thumbnailUrl": "http://videomemes.xyz/coffin.jpg"
+}, {
+	"id": "2",
+	"resources": [{
+		"name": "directedby.mp4",
+		"url": "http://videomemes.xyz/directedby.mp4",
+		"type": "video_vertical"
+	}],
+	"title": "Directed by Robert b Weide",
+	"thumbnailUrl": "http://videomemes.xyz/directedby.jpg"
+}]
