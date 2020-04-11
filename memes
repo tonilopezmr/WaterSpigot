@@ -4,13 +4,13 @@
     "resources": ["http://videomemes.xyz/funeral.mp4", "http://videomemes.xyz/song.m4a", "http://videomemes.xyz/funeral_vertical.mp4"],
     "title": "Coffin dance",
     "type": "complex",
-    "thumbnailUrl": "coffin.jpg"
+    "thumbnailUrl": "http://videomemes.xyz/coffin.jpg"
   },
   {
     "id": "2",
     "resources": ["http://videomemes.xyz/directedby.mp4"],
     "title": "Directed by Robert b Weide",
     "type": "concat",
-    "thumbnailUrl": "directedby.jpg"
+    "thumbnailUrl": "http://videomemes.xyz/directedby.jpg"
   }
 ]
