@@ -18,6 +18,31 @@
         "type": "video_vertical"
       }
     ],
+     "cmd": [
+      {
+        "id": 0,
+        "exec": [
+          "-i",
+          "$input",
+          "-i",
+          "$memeVideo",
+          "-filter_complex",
+          "[0:v:0][0:a:1][1:v:0][1:a:1]concat=n=2:v=1:a=1[outv][outa]",
+          "-shortest",
+          "-map",
+          "[outv]",
+          "-map",
+          "[outa]",
+          "-preset:v",
+          "ultrafast",
+          "-crf",
+          "26",
+          "$output",
+          "-y"
+        ],
+        "outExtension": ".mp4"
+      }
+    ],
     "title": "Coffin dance",
     "thumbnailUrl": "http://videomemes.xyz/coffin.jpg"
   },
@@ -35,9 +60,9 @@
         "id": 0,
         "exec": [
           "-i",
-          "$input0",
+          "$input",
           "-i",
-          "$input1",
+          "$memeVideo",
           "-filter_complex",
           "[0:v:0][0:a:1][1:v:0][1:a:1]concat=n=2:v=1:a=1[outv][outa]",
           "-shortest",
@@ -51,7 +76,8 @@
           "26",
           "$output",
           "-y"
-        ]
+        ],
+        "outExtension": ".mp4"
       }
     ],
     "title": "Directed by Robert b Weide",
