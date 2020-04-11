@@ -23,7 +23,7 @@
 	"resources": [{
 		"name": "directedby.mp4",
 		"url": "http://videomemes.xyz/directedby.mp4",
-		"type": "video_vertical"
+		"type": "video_horizontal"
 	}],
 	"title": "Directed by Robert b Weide",
 	"thumbnailUrl": "http://videomemes.xyz/directedby.jpg"
