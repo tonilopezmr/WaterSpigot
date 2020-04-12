@@ -1,5 +1,5 @@
 [{
-		"id": "1",
+		"id": "0",
 		"resources": [{
 				"name": "funeral.mp4",
 				"url": "http://videomemes.xyz/funeral.mp4",
@@ -106,7 +106,7 @@
 		"thumbnailUrl": "http://videomemes.xyz/coffin.jpg"
 	},
 	{
-		"id": "2",
+		"id": "1",
 		"resources": [{
 			"name": "directedby.mp4",
 			"url": "http://videomemes.xyz/directedby_vertical.mp4",
@@ -149,5 +149,112 @@
 		},
 		"title": "Directed by Robert b Weide",
 		"thumbnailUrl": "http://videomemes.xyz/directedby.jpg"
+	},
+    {
+		"id": "2",
+		"resources": [{
+				"name": "jesus.mp4",
+				"url": "http://videomemes.xyz/jesus.mp4",
+				"type": "video_horizontal",
+				"metadata": ""
+			},
+			{
+				"name": "song.m4a",
+				"url": "http://videomemes.xyz/song.m4a",
+				"type": "song",
+				"metadata": "10.9;24"
+			},
+			{
+				"name": "jesus_vertical.mp4",
+				"url": "http://videomemes.xyz/jesus_vertical.mp4",
+				"type": "video_vertical",
+				"metadata": ""
+			}
+		],
+		"cmd": [{
+			"id": 0,
+			"exec": [
+				"-i",
+				"$song",
+				"-ss",
+				"$songStarts",
+				"-to",
+				"$songEnd",
+				"-preset:v",
+				"veryfast",
+				"-c",
+				"copy",
+				"$output",
+				"-y"
+			],
+			"mute": [
+				"-i",
+				"$song",
+				"-ss",
+				"$songStarts",
+				"-to",
+				"$songEnd",
+				"-preset:v",
+				"veryfast",
+				"-af",
+				"afade=enable='between(t,9,11)':t=in:st=5:d=6,volume=enable='between(t,0,5)':volume=.0:eval=frame,volume=enable='between(t,5,9)':volume=.07:eval=frame",
+				"$output",
+				"-y"
+			],
+			"description": "When audio is not muted",
+			"outExtension": ".m4a"
+		}, {
+			"id": 1,
+			"exec": [
+				"-i",
+				"$input",
+				"-i",
+				"$memeVideo",
+				"-i",
+				"$song0",
+				"-filter_complex",
+				"[0:v:0][1:v:0]concat=n=2:v=1[outv]",
+				"-shortest",
+				"-map",
+				"[outv]",
+				"-map",
+				"2:a:0",
+				"-preset:v",
+				"ultrafast",
+				"-crf",
+				"26",
+				"$output",
+				"-y"
+			],
+			"mute": [
+				"-i",
+				"$input",
+				"-i",
+				"$memeVideo",
+				"-i",
+				"$song0",
+				"-filter_complex",
+				"[0:a][2:a]amix=inputs=2[outa],[0:v:0][1:v:0]concat=n=2:v=1[outv]",
+				"-shortest",
+				"-map",
+				"[outv]",
+				"-map",
+				"[outa]",
+				"-preset:v",
+				"ultrafast",
+				"-crf",
+				"26",
+				"$output",
+				"-y"
+			],
+			"description": "",
+			"outExtension": ".mp4"
+		}],
+		"options": {
+			"mute": true,
+			"beat": true
+		},
+		"title": "Coffin dance",
+		"thumbnailUrl": "http://videomemes.xyz/jesus.jpg"
 	}
 ]
