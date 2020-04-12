@@ -109,6 +109,11 @@
 		"id": "2",
 		"resources": [{
 			"name": "directedby.mp4",
+			"url": "http://videomemes.xyz/directedby_vertical.mp4",
+			"type": "video_vertical",
+			"metadata": ""
+		},{
+			"name": "directedby.mp4",
 			"url": "http://videomemes.xyz/directedby.mp4",
 			"type": "video_horizontal",
 			"metadata": ""
