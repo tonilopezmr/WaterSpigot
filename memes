@@ -2,19 +2,19 @@
 		"id": "0",
 		"resources": [{
 				"name": "funeral.mp4",
-				"url": "http://videomemes.xyz/funeral.mp4",
+				"url": "https://videomemes.xyz/funeral.mp4",
 				"type": "video_horizontal",
 				"metadata": ""
 			},
 			{
 				"name": "song.m4a",
-				"url": "http://videomemes.xyz/song.m4a",
+				"url": "https://videomemes.xyz/song.m4a",
 				"type": "song",
 				"metadata": "10.9;24"
 			},
 			{
 				"name": "funeral_vertical.mp4",
-				"url": "http://videomemes.xyz/funeral_vertical.mp4",
+				"url": "https://videomemes.xyz/funeral_vertical.mp4",
 				"type": "video_vertical",
 				"metadata": ""
 			}
@@ -103,18 +103,18 @@
 			"beat": true
 		},
 		"title": "Coffin dance",
-		"thumbnailUrl": "http://videomemes.xyz/coffin.jpg"
+		"thumbnailUrl": "https://videomemes.xyz/coffin.jpg"
 	},
 	{
 		"id": "1",
 		"resources": [{
 			"name": "directedby.mp4",
-			"url": "http://videomemes.xyz/directedby_vertical.mp4",
+			"url": "https://videomemes.xyz/directedby_vertical.mp4",
 			"type": "video_vertical",
 			"metadata": ""
 		},{
 			"name": "directedby.mp4",
-			"url": "http://videomemes.xyz/directedby.mp4",
+			"url": "https://videomemes.xyz/directedby.mp4",
 			"type": "video_horizontal",
 			"metadata": ""
 		}],
@@ -148,25 +148,25 @@
 			"beat": false
 		},
 		"title": "Directed by Robert b Weide",
-		"thumbnailUrl": "http://videomemes.xyz/directedby.jpg"
+		"thumbnailUrl": "https://videomemes.xyz/directedby.jpg"
 	},
     {
 		"id": "2",
 		"resources": [{
 				"name": "jesus.mp4",
-				"url": "http://videomemes.xyz/jesus.mp4",
+				"url": "https://videomemes.xyz/jesus.mp4",
 				"type": "video_horizontal",
 				"metadata": ""
 			},
 			{
 				"name": "song.m4a",
-				"url": "http://videomemes.xyz/song.m4a",
+				"url": "https://videomemes.xyz/song.m4a",
 				"type": "song",
 				"metadata": "10.9;24"
 			},
 			{
 				"name": "jesus_vertical.mp4",
-				"url": "http://videomemes.xyz/jesus_vertical.mp4",
+				"url": "https://videomemes.xyz/jesus_vertical.mp4",
 				"type": "video_vertical",
 				"metadata": ""
 			}
@@ -255,6 +255,6 @@
 			"beat": true
 		},
 		"title": "Jesus dancing",
-		"thumbnailUrl": "http://videomemes.xyz/jesus.jpg"
+		"thumbnailUrl": "https://videomemes.xyz/jesus.jpg"
 	}
 ]
